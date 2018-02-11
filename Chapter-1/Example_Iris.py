@@ -3,6 +3,7 @@
 Spyder Editor
 
 """
+
 # Import Required Packages
 import numpy as np
 import scipy as sp
@@ -33,7 +34,8 @@ print(iris_dataset['feature_names'])
 # Type of iris_dataset['data'] = numpy.ndarray
 print("Type of data: {}".format(type(iris_dataset['data'])))
 
-X_train, X_test, y_train, y_test = train_test_split(iris_dataset['data'], iris_dataset['target'], random_state=0)
+X_train, X_test, y_train, y_test = \
+    train_test_split(iris_dataset['data'], iris_dataset['target'], random_state=0)
 
 # We can use graphs - (matplot-lib , pandas) to visualize our problem and to see whether our
 # problem can be solved using machine learning or can be solved using simple conditions.
@@ -46,7 +48,8 @@ knn.fit(X_train, y_train)
 
 # Making predictions
 X_new = np.array([[5, 2.9, 1, 0.2]])
-knn.predict(X_new)
+solution = knn.predict(X_new)
+print(solution)
 
 # Predicting the result of our test data created when we split the data
 y_pred = knn.predict(X_test)
